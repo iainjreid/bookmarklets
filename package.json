@@ -1,6 +1,13 @@
 {
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "f() { echo \"javascript:$(browserify src/main/$1.js | minify --js)\" > dist/$1; }; f"
+  },
+  "dependencies": {
+    "@chaff/fui-html": "0.0.17"
+  },
+  "devDependencies": {
+    "browserify": "^16.2.3",
+    "minify": "^4.1.1"
   },
   "license": "MIT",
   "private": true
