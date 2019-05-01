@@ -33,6 +33,7 @@ const text = document.body.innerText.replace(/\s/g, " ").replace(/[^\sa-zA-Z0-9+
  */
 const words = text
   .filter((word) => word.length >= 4)
+  .map((word) => word.toLowerCase())
   .sort();
 
 /**
