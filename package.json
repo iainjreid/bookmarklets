@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "build": "f() { echo \"javascript:$(browserify src/main/$1.js | minify --js)\" > dist/$1; }; f"
+    "build": "f() { mkdir -p dist; echo \"javascript:$(browserify src/main/$1.js | minify --js)\" > dist/$1; }; f"
   },
   "dependencies": {
     "@chaff/fui-html": "0.0.17"
