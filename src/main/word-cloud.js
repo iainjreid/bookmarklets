@@ -1,10 +1,8 @@
 const { div, h2, span } = require("@chaff/fui-html");
+const { wrapper } = require("./lib/dom");
 
-const wordCloudOverlay =
-  div.attr("style", "display: flex; align-items: center; justify-content: center; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 999; background-color: rgba(0,0,0,0.5);")
-
-const wordCloudWrapper =
-  div.attr("style", "width: 480px; height: 520px; border-radius: 3px; background-color: white; overflow: scroll; padding: 20px;");
+const wordCloudContainer =
+  div.attr("style", "width: 480px; height: 520px; margin: auto; border-radius: 3px; background-color: white; overflow: scroll; padding: 20px;");
 
 const wordCloudHead =
   h2.attr("style", "margin-bottom: 8px; text-align: center;").text(document.title)
@@ -17,8 +15,8 @@ const wordCloudBody =
   ));
 
 const wordCloud =
-  wordCloudOverlay.add(
-    wordCloudWrapper
+  wrapper.add(
+    wordCloudContainer
       .add(wordCloudHead)
       .add(wordCloudBody)
   );
